@@ -1,0 +1,503 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Vertical Timeline</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  
+    <style>
+        body{margin: 100px 0; background: #555;}
+        .previewWrap{background: #fff; max-width: 960px; margin: 0 auto; z-index: -22;}
+
+/*===== Vertical Timeline =====*/
+#conference-timeline {position: relative;max-width: 920px;width: 100%;margin: 0 auto;}
+
+#conference-timeline .conference-center-line {position: absolute;width: 1px;height: 100%;top: 0;left: 50%;background: #ddd;z-index: -1;}
+#conference-timeline .conference-timeline-content {padding:20px 0;}
+.timeline-article {width: 100%;position: relative;overflow: hidden;margin:0; padding-top:60px; margin-top:-50px; opacity: 0; transition: all 600ms;}
+.timeline-article:first-child{margin-top:0;}
+.timeline-article.fadeIn{opacity: 1;padding-top:40px;}
+.timeline-article .content-left-container,
+.timeline-article .content-right-container {max-width: 48%;width: 100%;}
+
+.timeline-article .content-left,
+.timeline-article .content-right {position: relative;width: auto; padding-top:17px;}
+.timeline-article .content-left{text-align: right;}
+.timeline-article p {padding: 0;position: relative; margin-top:8px;}
+
+.timeline-article .content-left-container {float: left;}
+.timeline-article .content-right-container {float: right;}
+.timeline-article .meta-date {position: absolute;/*top: 80px;*/top:0; margin-top:-30px; left: 50%;margin-left: -4px; background: #fff; padding: 10px;}
+.timeline-article .bullet{width: 8px;height: 8px;background: #D29F13; transform: rotate(45deg);}
+.timeline-article .line {background: #D29F13; width: 2px; height: 60px; margin-left: 4px; margin-top:5px;}
+        .timeline-article .meta-date.left {transform: rotate(90deg); margin-left: -46px;}
+        .timeline-article .meta-date.right {transform: rotate(-90deg); margin-left: 20px;}
+        
+        #conference-timeline .year-ruler{display:none; position: fixed; right:20px; top:50%; margin-top: -150px; text-align: right; }
+        #conference-timeline .year-ruler li{list-style: none;font-size: 9px; transition: all 0.3s ease-out;color: rgba(255,255,255,0.5);}
+        #conference-timeline .year-ruler li.active{font-size: 14px; color: rgba(255,255,255,1);}
+        @media(max-width:767px){
+            #conference-timeline .year-ruler li{color:rgba(111,111,111,0.5);}
+            #conference-timeline .year-ruler li.active{font-size: 11px; font-weight: 600; color:rgba(111,111,111,1);}
+        }
+/*===== // Vertical Timeline =====*/
+
+/*===== Resonsive Vertical Timeline =====*/
+@media only screen and (max-width: 780px) {
+.timeline-article .content-left-container,
+.timeline-article .content-right-container {max-width: 45%;}
+}
+        @media only screen and (max-width: 485px) {
+#conference-timeline .conference-center-line {left: 10px;}
+.timeline-article {width: 85%; margin-top:0; padding-bottom: 20px;}
+.timeline-article .content-left-container,
+.timeline-article .content-right-container {max-width: 90%; margin-left: 30px;}
+.timeline-article .content-left{text-align: left;}
+.timeline-article .content-left-container {float: left;}
+.timeline-article .content-right-container {float: left;}
+.timeline-article .meta-date {left: 10px;}
+.timeline-article .meta-date.left {transform: rotate(-90deg); margin-left: 20px;}
+}
+/*===== // Resonsive Vertical Timeline =====*/
+    </style>
+</head>
+<body>
+    <div class="previewWrap">
+        
+  <!-- Vertical Timeline -->
+  <section id="conference-timeline">
+      <div class="year-ruler">
+          <ul>
+              <li class="active">2532</li>
+              <li>2534</li>
+              <li>2536</li>
+              <li>2538</li>
+              <li>2540</li>
+              <li>2542</li>
+              <li>2549</li>
+              <li>2550</li>
+              <li>2551</li>
+              <li>2552</li>
+              <li>2553</li>
+              <li>2554</li>
+              <li>2555</li>
+              <li>2556</li>
+              <li>2557</li>
+              <li>2558</li>
+              <li>2559</li>
+              <li>2560</li>
+              <li>2561</li>
+          </ul>
+      </div>
+    <div class="conference-center-line"></div>
+    <div class="conference-timeline-content">
+      
+      <!-- Article -->
+      <div class="timeline-article" count=0 >
+          <div class="meta-date right"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-right-container">
+          <div class="content-right">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19143237/tmp-timeline-icon-01.png" >
+              <h3>2532</h3>
+            <p>granted a license to launch Thailand's first downtown duty free shop at Mahatun Plaza</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+      
+      <!-- Article -->
+      <div class="timeline-article" count=1>
+          <div class="meta-date left"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-left-container">
+          <div class="content-left">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19143238/tmp-timeline-icon-02.png">
+              <h3>2534</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+        
+        <!-- Article -->
+      <div class="timeline-article" count=2>
+          <div class="meta-date right"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-right-container">
+          <div class="content-right">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19143238/tmp-timeline-icon-03.png">
+              <h3>2536</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+      
+      <!-- Article -->
+      <div class="timeline-article" count=3>
+          <div class="meta-date left"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-left-container">
+          <div class="content-left">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19143238/tmp-timeline-icon-02.png">
+              <h3>2538</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+        
+        <!-- Article -->
+      <div class="timeline-article" count=4>
+          <div class="meta-date right"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-right-container">
+          <div class="content-right">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19142753/tmp-timeline-icon-04.png">
+              <h3>2540</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+      
+      <!-- Article -->
+      <div class="timeline-article" count=4>
+          <div class="meta-date left"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-left-container">
+          <div class="content-left">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19143238/tmp-timeline-icon-03.png">
+              <h3>2540</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+        
+        <!-- Article -->
+      <div class="timeline-article" count=5>
+          <div class="meta-date right"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-right-container">
+          <div class="content-right">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19142754/tmp-timeline-icon-05.png">
+              <h3>2542</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+      
+      <!-- Article -->
+      <div class="timeline-article" count=6>
+          <div class="meta-date left"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-left-container">
+          <div class="content-left">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19142754/tmp-timeline-icon-06.png">
+              <h3>2549</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+        
+        <!-- Article -->
+      <div class="timeline-article" count=6>
+          <div class="meta-date right"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-right-container">
+          <div class="content-right">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19142754/tmp-timeline-icon-07.png">
+              <h3>2549</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+      
+      <!-- Article -->
+      <div class="timeline-article" count=7>
+          <div class="meta-date left"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-left-container">
+          <div class="content-left">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19142754/tmp-timeline-icon-05.png">
+              <h3>2550</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+        
+        <!-- Article -->
+      <div class="timeline-article" count=8>
+          <div class="meta-date right"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-right-container">
+          <div class="content-right">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19142754/tmp-timeline-icon-08.png">
+              <h3>2551</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+      
+      <!-- Article -->
+      <div class="timeline-article" count=9>
+          <div class="meta-date left"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-left-container">
+          <div class="content-left">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19142754/tmp-timeline-icon-09.png">
+              <h3>2552</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+        
+        <!-- Article -->
+      <div class="timeline-article" count=10>
+          <div class="meta-date right"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-right-container">
+          <div class="content-right">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19142755/tmp-timeline-icon-10.png">
+              <h3>2553</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+      
+      <!-- Article -->
+      <div class="timeline-article" count=10>
+          <div class="meta-date left"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-left-container">
+          <div class="content-left">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19142754/tmp-timeline-icon-05.png">
+              <h3>2553</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+        
+        <!-- Article -->
+      <div class="timeline-article" count=11>
+          <div class="meta-date right"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-right-container">
+          <div class="content-right">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19142755/tmp-timeline-icon-11.png">
+              <h3>2554</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+      
+      <!-- Article -->
+      <div class="timeline-article" count=12>
+          <div class="meta-date left"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-left-container">
+          <div class="content-left">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19143238/tmp-timeline-icon-03.png">
+              <h3>2555</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+        
+        <!-- Article -->
+      <div class="timeline-article" count=12>
+          <div class="meta-date right"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-right-container">
+          <div class="content-right">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19142754/tmp-timeline-icon-05.png">
+              <h3>2555</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+      
+      <!-- Article -->
+      <div class="timeline-article" count=13>
+          <div class="meta-date left"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-left-container">
+          <div class="content-left">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19142755/tmp-timeline-icon-12.png">
+              <h3>2556</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+        
+        <!-- Article -->
+      <div class="timeline-article" count=14>
+          <div class="meta-date right"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-right-container">
+          <div class="content-right">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19142755/tmp-timeline-icon-13.png">
+              <h3>2557</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+      
+      <!-- Article -->
+      <div class="timeline-article" count=14>
+          <div class="meta-date left"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-left-container">
+          <div class="content-left">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19142754/tmp-timeline-icon-05.png">
+              <h3>2557</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+        
+        <!-- Article -->
+      <div class="timeline-article" count=15>
+          <div class="meta-date right"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-right-container">
+          <div class="content-right">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19142756/tmp-timeline-icon-14.png">
+              <h3>2558</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+      
+      <!-- Article -->
+      <div class="timeline-article" count=15>
+          <div class="meta-date left"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-left-container">
+          <div class="content-left">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19142756/tmp-timeline-icon-15.png">
+              <h3>2558</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+        
+        <!-- Article -->
+      <div class="timeline-article" count=16>
+          <div class="meta-date right"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-right-container">
+          <div class="content-right">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19142756/tmp-timeline-icon-16.png">
+              <h3>2559</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+      
+      <!-- Article -->
+      <div class="timeline-article" count=16>
+          <div class="meta-date left"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-left-container">
+          <div class="content-left">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19142756/tmp-timeline-icon-14.png">
+              <h3>2559</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+        
+        <!-- Article -->
+      <div class="timeline-article" count=17>
+          <div class="meta-date right"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-right-container">
+          <div class="content-right">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19142756/tmp-timeline-icon-17.png">
+              <h3>2560</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+      
+      <!-- Article -->
+      <div class="timeline-article" count=17>
+          <div class="meta-date left"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-left-container">
+          <div class="content-left">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19142757/tmp-timeline-icon-18.png">
+              <h3>2560</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+        
+        <!-- Article -->
+      <div class="timeline-article" count=17>
+          <div class="meta-date right"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-right-container">
+          <div class="content-right">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19143238/tmp-timeline-icon-03.png">
+              <h3>2560</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+      
+      <!-- Article -->
+      <div class="timeline-article" count=17>
+          <div class="meta-date left"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-left-container">
+          <div class="content-left">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19142757/tmp-timeline-icon-19.png">
+              <h3>2560</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+        
+        <!-- Article -->
+      <div class="timeline-article" count=18>
+          <div class="meta-date right"><div class="bullet"></div><div class="line"></div></div>
+        <div class="content-right-container">
+          <div class="content-right">
+              <img src="https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/19142757/tmp-timeline-icon-20.png">
+              <h3>2561</h3>
+            <p>Granted a license to open King Power's first overseas duty free operation in Phnom Penh. Cambodia.</p>
+          </div>
+        </div>
+      </div>
+      <!-- // Article -->
+        
+        
+    </div>
+  </section>
+  <!-- // Vertical Timeline -->
+        
+        </div><!-- wrapper -->
+    
+    <script type="text/javascript">
+        var yearPos = 0;
+        var wh = window.innerHeight;
+        $(window).scroll(function(){
+            
+            if ($(window).scrollTop() > $(".timeline-article:last-child").offset().top-300) {
+                    $('.year-ruler').fadeOut (300);
+                } else if($(window).scrollTop() > $(".conference-center-line").offset().top-400) {
+                    $('.year-ruler').fadeIn(300);
+                } else {$('.year-ruler').fadeOut(300);}
+            
+            $(".timeline-article").each(function(){
+                if($(this).offset().top < $(window).scrollTop()+500){
+                    $(this).addClass("fadeIn");
+                    yearPos = $(this).attr('count');
+                }
+            });
+            $(".year-ruler li").removeClass('active');
+            $(".year-ruler li").eq(yearPos).addClass('active');
+
+        });
+    </script>
+    
+</body>
+</html>
