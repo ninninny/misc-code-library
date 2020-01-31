@@ -1,0 +1,206 @@
+<html>
+    <head>
+        <title>Collab Panals</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        
+        <style type="text/css">
+/****** Collab Panals ********/
+.wrap-collab {text-align: left;}
+.wrap-collab ul{margin:0; padding: 0;}
+.wrap-collab ul li{list-style: none; padding: 5px; border-bottom: 1px solid #eee; color: #282828;}
+.wrap-collab ul li:last-child{border-bottom: none;}
+.wrap-collab ul li .name{ font-weight:600; text-transform: uppercase; padding-right:7px;}
+.wrap-collab .yearTab {display: block; position:relative;background: #eee; cursor: pointer; transition: all 0.25s ease-out; padding: 7px 10px; font-size: 18px; font-weight: 600; margin: 2px 0 0 0; text-align: left; color: #282828;}
+.wrap-collab .yearTab:hover, .wrap-collab .yearTab.opened {background: #ddd;}
+.wrap-collab .yearTab::after {content:url('https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/25164619/down.png'); display:block; position: absolute; right: 10px; top:3px;transition: all 0.3s ease-out;}
+.wrap-collab .yearTab.opened::after {transform: rotate(180deg); top:10px;}
+.wrap-collab .detail .content-inner {padding: 10px 15px 10px 15px;}
+            
+.wrap-collab .detail {height: 0; max-height: 0px;overflow: hidden;transition: max-height .25s ease-in-out;}
+.wrap-collab .detail.opened {max-height: 600px;height: auto;}
+@media(max-width:767px){
+    .wrap-collab ul li .name{display:block;}
+}
+/****** END Collab Panals ********/
+        </style>
+    </head>
+<body>
+    <div class="wrap-collab">
+
+        <!-- 2019 -->
+        <div class="awardToggle">
+            <a class="yearTab opened">2019</a>
+            <div class="detail opened">
+                <div class="content-inner">
+                    <ul>
+                        <li><span class="name">DFNI AWARDS</span> DFNI-FRONTIER : Asia Awards 2019 for Travel Retail Excellence</li>
+                        <li><span class="name">WORLD TRAVEL AWARDS</span> Asia’s Leading Airport Duty Free Operator 2019</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2018 -->
+        <div class="awardToggle">
+            <a class="yearTab">2018</a>
+            <div class="detail">
+                <div class="content-inner">
+                    <ul>
+                        <li><span class="name">FRONTIER AWARDS</span> Winner "Border / Downtown and Non-Airport Retailer of the Year" </li>
+                        <li><span class="name">DFNI AWARDS</span> Winner for "Best New Shop Opening"</li>
+                        <li><span class="name">WORLD TRAVEL AWARDS</span> Winner "World's Leading Airport Duty Free Operator 2018" </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2017 -->
+        <div class="awardToggle">
+            <a class="yearTab">2017</a>
+            <div class="detail">
+                <div class="content-inner">
+                    <ul>
+                        <li><span class="name">DFNI AWARDS</span> Winner for "Best Travel Retailer Operating in a Single Country in Asia / Pacific"</li>
+                        <li><span class="name">WORLD BRANDING AWARDS</span> Brand of the Year : Retail-Duty Free-Thailand </li>
+                        <li><span class="name">SUPERBRAND AWARDS</span> Winner "Excellent Branding in Duty Free 2017"</li>
+                        <li><span class="name">ENERGY AWARD</span> Thailand Energy Award 2017 : Srivaree Complex</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2016 -->
+        <div class="awardToggle">
+            <a class="yearTab">2016</a>
+            <div class="detail">
+                <div class="content-inner">
+                    <ul>
+                        <li><span class="name">DFNI AWARDS</span> Winner for "Best Travel Retailer Operating in a Single Country in Asia / Pacific"</li>
+                        <li><span class="name">WORLD BRANDING AWARDS</span> Brand of the Year : Retail-Duty Free-Thailand</li>
+                        <li><span class="name">SUPERBRAND AWARDS</span> Winner "The Most Distinctive &amp; Preferred Brand in Duty Free 2016"</li>
+                        <li><span class="name">ENERGY AWARD</span> MEA ENERGY SAVING BUILDING AWARD 2016 : Srivaree Complex</li>
+                        <li><span class="name">ENVIRONMENT AWARDS</span></li>
+                        <li><span class="name">SAFETY AWARDS</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2015 -->
+        <div class="awardToggle">
+            <a class="yearTab">2015</a>
+            <div class="detail">
+                <div class="content-inner">
+                    <ul>
+                        <li><span class="name">DFNI AWARDS</span> Winner for "Best Travel Retailer Operating in a Single Country in Asia / Pacific"</li>
+                        <li><span class="name">SUPERBRAND AWARDS</span> Winner "The Most Distinctive &amp; Preferred Brand in Duty Free 2015"</li>
+                        <li><span class="name">QUALITY SERVICE CERTIFICATION (QSC)</span> </li>
+                        <li><span class="name">Q Mark</span> </li>
+                        <li><span class="name">ENVIRONMENT AWARDS</span></li>
+                        <li><span class="name">SAFETY AWARDS</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2014 -->
+        <div class="awardToggle">
+            <a class="yearTab">2014</a>
+            <div class="detail">
+                <div class="content-inner">
+                    <ul>
+                        <li><span class="name">DFNI AWARDS</span> Winner for "Best Travel Retailer Operating in a Single Country in Asia / Pacific"</li>
+                        <li><span class="name">SUPERBRAND AWARDS</span> Winner "The Most Distinctive &amp; Preferred Brand in Duty Free 2014"</li>
+                        <li><span class="name">QUALITY SERVICE CERTIFICATION (QSC)</span> </li>
+                        <li><span class="name">Q Mark</span> </li>
+                        <li><span class="name">WORLD CONSULTING &amp; RESEARCH CORPORATION (WCRC)</span></li>
+                        <li><span class="name">ENERGY AWARD</span></li>
+                        <li><span class="name">ENVIRONMENT AWARDS</span></li>
+                        <li><span class="name">SAFETY AWARDS</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2013 -->
+        <div class="awardToggle">
+            <a class="yearTab">2013</a>
+            <div class="detail">
+                <div class="content-inner">
+                    <ul>
+                        <li><span class="name">SUPERBRAND AWARDS</span> Winner "The Most Distinctive &amp; Preferred Brand in Duty Free 2013"</li>
+                        <li><span class="name">QUALITY SERVICE CERTIFICATION (QSC)</span> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2012 -->
+        <div class="awardToggle">
+            <a class="yearTab">2012</a>
+            <div class="detail">
+                <div class="content-inner">
+                    <ul>
+                        <li><span class="name">DFNI AWARDS</span> Winner for "Best Travel Retailer Operating in a Single Country in Asia / Pacific"</li>
+                        <li><span class="name">SUPERBRAND AWARDS</span> Winner "The Most Distinctive &amp; Preferred Brand in Duty Free 2012"</li>
+                        <li><span class="name">ENERGY AWARD</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2011 -->
+        <div class="awardToggle">
+            <a class="yearTab">2011</a>
+            <div class="detail">
+                <div class="content-inner">
+                    <ul>
+                        <li><span class="name">FRONTIER AWARDS</span> Winner "Best Land - Border / Downtown Retailer of the Year"</li>
+                        <li><span class="name">FRONTIER AWARDS</span> Winner "Best Airport Retailer of the Year"</li>
+                        <li><span class="name">DFNI AWARDS</span> Winner for "Best Travel Retailer in Asia / Pacific"</li>
+                        <li><span class="name">SUPERBRAND AWARDS</span> Winner "The Most Distinctive &amp; Preferred Brand in Duty Free 2011"</li>
+                        <li><span class="name">ENVIRONMENT AWARDS</span> </li>
+                        <li><span class="name">SAFETY AWARDS</span> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2010 -->
+        <div class="awardToggle">
+            <a class="yearTab">2010</a>
+            <div class="detail">
+                <div class="content-inner">
+                    <ul>
+                        <li><span class="name">FRONTIER AWARDS</span> Winner "Land Based - Border / Downtown Retailer of the Year"</li>
+                        <li><span class="name">SUPERBRAND AWARDS</span> Winner "The Most Distinctive &amp; Preferred Brand in Duty Free Category"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+        
+        <script>
+            $('.awardToggle').click(function(){
+                
+                $(".detail").removeClass('opened');
+                $(".yearTab").removeClass('opened');
+                if($(this).hasClass("opened")){
+                    $('.detail',this).removeClass('opened');
+                    $('.yearTab',this).removeClass('opened');
+                    $(this).removeClass('opened');
+                } else{
+                    $('.detail',this).addClass('opened');
+                    $('.yearTab',this).addClass('opened');
+                    $(this).addClass('opened');
+                }
+            });
+            
+            
+        </script>
+
+</body>
+</html>

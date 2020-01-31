@@ -1,0 +1,153 @@
+<html>
+    <head>
+        <title>Store Location Mobile collab</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        
+        <style type="text/css">
+            *{box-sizing: border-box;}
+            body{width:375px; margin:0 auto; border:1px solid #eee; background: #0B56A4;}
+            .detailDrawer{margin: 10px 5px; background: #fff; }
+            
+/* Detail Drawer*/
+.detailDrawer .togglePanel{display: block; position:relative; cursor: pointer; transition: all 0.3s ease-out; padding: 15px 10px 5px 15px; width:100%; border-top:1px solid #ccc; margin-top: 5px; z-index: 99;}
+.detailDrawer .togglePanel .icon{content: url('https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/25164619/down.png'); margin: 0 auto; transition: all 0.3s ease-out;}
+.detailDrawer .togglePanel.opened .icon{transform: rotate(180deg);}
+.detailDrawer .detail{max-height: 0px;overflow: hidden;transition: max-height .3s ease-in-out;}
+.detailDrawer .detail.opened {max-height: 800px;}
+.detailDrawer .detail div{padding-bottom:5px;}
+.detailDrawer .detail div:last-child{padding-bottom: 20px;}
+/* END Detail Drawer*/
+            
+            .link{z-index: 9999;}
+            
+        </style>
+    </head>
+    <body>
+        <!-- detailDrawer -->
+        <div class="detailDrawer">
+            <div class="detail">
+                <div class="address"><p>Address:</p></div>
+                <div class="transit">
+                    <p>Bus: </p>
+                    <p>Airport Rail link: </p>
+                </div>
+                <div class="car"><p>Car: </p></div>
+                <div class="link"><p>
+                    <a href="#" target="_blank">LINK</a>
+                    <!--| <a href="#">MORE INFO</a>-->
+                    </p></div>
+            </div>
+            <div class="togglePanel"><div class="icon"></div></div>
+        </div>
+        <!-- END detailDrawer -->
+        
+        <!-- detailDrawer -->
+        <div class="detailDrawer">
+            <div class="detail">
+                <div class="address"><p>Address:</p></div>
+                <div class="transit">
+                    <p>Bus: </p>
+                    <p>Airport Rail link: </p>
+                </div>
+                <div class="car"><p>Car: </p></div>
+                <div class="link"><p>
+                    <a href="#" target="_blank">LINK</a>
+                    <!--| <a href="#">MORE INFO</a>-->
+                    </p></div>
+            </div>
+            <div class="togglePanel"><div class="icon"></div></div>
+        </div>
+        <!-- END detailDrawer -->
+        
+        <!-- detailDrawer -->
+        <div class="detailDrawer">
+            <div class="detail">
+                <div class="address"><p>Address:</p></div>
+                <div class="transit">
+                    <p>Bus: </p>
+                    <p>Airport Rail link: </p>
+                </div>
+                <div class="car"><p>Car: </p></div>
+                <div class="link"><p>
+                    <a href="#" target="_blank">LINK</a>
+                    <!--| <a href="#">MORE INFO</a>-->
+                    </p></div>
+            </div>
+            <div class="togglePanel"><div class="icon"></div></div>
+        </div>
+        <!-- END detailDrawer -->
+        
+        <!-- detailDrawer -->
+        <div class="detailDrawer">
+            <div class="detail">
+                <div class="address"><p>Address:</p></div>
+                <div class="transit">
+                    <p>Bus: </p>
+                    <p>Airport Rail link: </p>
+                </div>
+                <div class="car"><p>Car: </p></div>
+                <div class="link"><p>
+                    <a href="#" target="_blank">LINK</a>
+                    <!--| <a href="#">MORE INFO</a>-->
+                    </p></div>
+            </div>
+            <div class="togglePanel"><div class="icon"></div></div>
+        </div>
+        <!-- END detailDrawer -->
+        
+        <!-- detailDrawer -->
+        <div class="detailDrawer">
+            <div class="detail">
+                <div class="address"><p>Address:</p></div>
+                <div class="transit">
+                    <p>Bus: </p>
+                    <p>Airport Rail link: </p>
+                </div>
+                <div class="car"><p>Car: </p></div>
+                <div class="link"><p>
+                    <a href="#" target="_blank">LINK</a>
+                    <!--| <a href="#">MORE INFO</a>-->
+                    </p></div>
+            </div>
+            <div class="togglePanel"><div class="icon"></div></div>
+        </div>
+        <!-- END detailDrawer -->
+        
+        
+        
+        
+        
+        
+        
+        <script type="text/javascript"> 
+            $('.detailDrawer').click(function(){
+                $('.detail').removeClass('opened');
+                $('.togglePanel').removeClass('opened');
+                if($(this).hasClass("opened")){
+                    $('.detail',this).removeClass('opened');
+                    $('.togglePanel',this).removeClass('opened');
+                    $(this).removeClass('opened');
+                } else{
+                    $('.detail',this).addClass('opened');
+                    $('.togglePanel',this).addClass('opened');
+                    $(this).addClass('opened');
+                    
+                }
+            });
+            
+            $(window).scroll(function() {
+                $(".branch-card").each(function(){
+                    if($(this).offset().top < $(window).scrollTop()+500){
+                        $(this).addClass("fadeIn");
+                    }
+                });
+                if($(window).scrollTop()> $("#airport-utapao").offset().top){
+                    $(".submenu-wrapper").addClass("toBottom");
+                } else{
+                    $(".submenu-wrapper").removeClass("toBottom");
+                }
+            });
+        </script>
+        
+    </body>
+</html>

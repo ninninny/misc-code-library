@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>submenu move when scroll to bottom</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        
+        <style type="text/css">
+            *{box-sizing: border-box;}
+            body{background: #0B56A4;}
+            footer{display:block; position: relative; width: 100%; background: #fff; height: 300px;}
+            .wrapper{display: block; position:relative; width: 960px; margin: 0 auto;}
+            .content{display: block; position: relative; width: 75%; margin: 100px 0 100px 300px; background: #fff; min-height: 1200px; padding-top: 500px;}
+            #a01{display:block; position:relative; width: 100%; background: #00f; padding: 10px; color:#fff; text-align: center;}
+            
+            .sub-menu{display: block; position: fixed; width: 290px; height: 600px; border: 1px solid #abc;}
+            
+            .sub-menu.toBottom{position:absolute;border: 1px solid #ff0; bottom:0;}
+            
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+        <div class="sub-menu"></div>
+            
+        <div class="content">
+            <a id="a01">ANCHOR LINK</a>
+            </div>
+        </div>
+        
+        <footer>
+        </footer>
+        
+        
+        <script>     
+            
+            $(window).scroll(function() {
+                if($(window).scrollTop()> $("#a01").offset().top){
+                    $(".sub-menu").addClass("toBottom");
+                } else{
+                    $(".sub-menu").removeClass("toBottom");
+                }
+            });
+
+            
+            /*$(window).scroll(function() {
+                var downDeep = $("#a01").offset().top;
+                var menuDown = $(".sub-menu").offset().top;
+                
+                $("#a01").click(function(){
+                    var menuDown = $(".sub-menu").offset().top;
+                    alert(menuDown);
+                });
+                
+                /*if(menuDown==900){
+                alert(menuDown);
+                    }
+            });*/
+
+        </script>
+        
+    </body>
+</html>
