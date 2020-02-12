@@ -1,0 +1,62 @@
+.wrap-collab {
+  text-align: left;
+}
+.wrap-collab ul {
+  margin: 0;
+  padding: 0;
+}
+.wrap-collab ul li {
+  list-style: none;
+  padding: 5px;
+  border-bottom: 1px solid #eee;
+  color: #282828;
+}
+.wrap-collab ul li:last-child {
+  border-bottom: none;
+}
+.wrap-collab ul li .name {
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-right: 7px;
+}
+.wrap-collab .yearTab {
+  display: block;
+  position: relative;
+  background: #eee;
+}
+.wrap-collab .yearTab:hover, .wrap-collab .yearTab.opened {
+  background: #ddd;
+}
+.wrap-collab .yearTab::after {
+  content: url("https://s3-ap-southeast-1.amazonaws.com/wpimage.kpgroup/dev/2019/12/25164619/down.png");
+  display: block;
+  position: absolute;
+  right: 10px;
+  top: 3px;
+  transition: all 0.3s ease-in-out;
+}
+.wrap-collab .yearTab.opened::after {
+  transform: rotate(180deg);
+  top: 10px;
+}
+.wrap-collab .detial {
+  height: 0;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.25s ease-in-out;
+}
+.wrap-collab .detail.opened {
+  max-height: 600px;
+  height: auto;
+}
+.wrap-collab .detail .content-inner {
+  padding: 10px 15px 10px 15px;
+}
+
+@media (max-width: 767px) {
+  .wrap-collab ul li .name {
+    display: block;
+  }
+}
+
+/*# sourceMappingURL=collab-style.css.map */
