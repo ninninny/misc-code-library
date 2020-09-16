@@ -1,0 +1,61 @@
+/*
+ Theme Name:   Storefront Child
+ Theme URI:    https://woocommerce.com/storefront/
+ Description:  Storefront Child Theme
+ Author:       KPC
+ Author URI:   http://example.com
+ Template:     storefront
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         light, dark, two-columns, right-sidebar, responsive-layout, accessibility-ready
+ Text Domain:  storefront
+*/
+
+.site-header {padding-top:10px; margin-bottom:0 !important;}
+.flexslider{border:none}
+.flex-control-nav {bottom:0;}
+
+.topBar{display:block; position: relative; width:100%; padding:10px 20px; 
+    background-color: #d30009; color:#fff; text-align: right;}
+.topBar .widget{display:inline-block; margin:0; padding-left:20px;}
+.topBar a {color:#fff;}
+.topBar a:hover {text-decoration: none;}
+
+footer {background:#b12028; color:#fff;}
+footer a{color:#fff;}
+footer .widget {width:20%;}
+
+.mainLogo {text-align: center;}
+.mainLogo img{display: inline-block; margin:0 auto;}
+
+#mainMenu {background:#fff5f6; z-index: 999; padding:10px 0;}
+#mainMenu ul, #mainMenu ul li{list-style: none;}
+#mainMenu {text-transform: uppercase;}
+#mainMenu a{display:block; width:100%; height:100%;}
+#mainMenu a:hover{text-decoration: none;}
+
+#mainMenu .menu{margin:0; display:flex;justify-content:center;}
+#mainMenu .menu>li{display:inline-block;vertical-align: top; position: relative; margin-left:20px;}
+#mainMenu .menu>li a{ padding:10px 20px;}
+#mainMenu .menu>li:first-child{background-color: #b12028; border-radius: 7px;margin-left:0;}
+#mainMenu .menu>li:first-child a {color:#fff;}
+
+#mainMenu .sub-menu {display:none; position: absolute; text-transform: capitalize;
+    background-color: #fff; margin-left:0; padding:30px 30px 20px 0; min-width: 200px;/*z-index: -1;*/}
+#mainMenu li:first-child .sub-menu{min-width: 300px;}
+#mainMenu ul>li:hover .sub-menu{display:block;}
+/*#mainMenu .sub-menu.active{display:block;}*/
+#mainMenu .sub-menu a {padding:3px 10px; color:#000 !important;}
+
+/** Search **/
+#searchform {display: flex;align-items: center; justify-content:flex-end; height: 100%;}
+#searchform .search-field {width: 300px; border:1px solid #ddd; 
+    border-radius: 4px; background-color: #fff; background:url('images/search.png') 270px center no-repeat;
+    background-size: 16px 16px; padding-right:35px;
+}
+
+.rowCatalogue{margin-top:30px; margin-bottom:30px;}
+
+.rowBenefits{margin-top:30px; margin-bottom:30px; text-align: center;}
+.rowBenefits h3{font-size: 21px; font-weight: bold; color:#b12028; margin-top: 20px;}
