@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>submenu move when scroll to bottom</title>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        
+        <style type="text/css">
+            *{box-sizing: border-box; text-align: center;}
+            body{background: #000; margin:0; padding:0; width:100%; height:100%;}
+            #topWrap{height:40px; background-color: #f00;}
+            #headWrap{height:1200px;}
+            #contentWrap {display:block; position: relative; width: 100%; background: #fff; height: 600px;}
+            .bottom-menu{
+                display:block; position:relative; width:100%; background:#000; color:#fff; z-index: 222;
+                padding:10px 0; height:80px;
+            }
+            .bottom-menu.snap{display:block; position:fixed; bottom:0;}
+            
+        </style>
+    </head>
+    <body>
+        <section id="topWrap">TOP</section>
+        <section id="headWrap">HEAD</section>
+        <div class="bottom-menu">BOTTOM MENU</div>
+        <section id="contentWrap">CONTENT</section>
+        
+        <script>     
+            
+            $(window).scroll(function() {
+                var windowPos = $(window).scrollTop()+ $(window).innerHeight();
+                var snapPos = $('#headWrap').height() + $('.bottom-menu').height() + 20 + $('#topWrap').height();
+
+                if(windowPos > snapPos){
+                    $(".bottom-menu").addClass("snap");
+                } else{
+                    $(".bottom-menu").removeClass("snap");
+                }
+            });
+
+            $(document).ready(function(){
+                $(window).scrollTop($('#headWrap').offset().top);
+            });
+
+        </script>
+        
+    </body>
+</html>
